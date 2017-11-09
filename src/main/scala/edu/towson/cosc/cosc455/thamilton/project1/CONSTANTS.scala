@@ -1,3 +1,4 @@
+package edu.towson.cosc.cosc455.thamilton.project1
 object CONSTANTS {
   val DOCB        : String =  "\\BEGIN"
   val DOCE        : String =  "\\END"
@@ -17,7 +18,8 @@ object CONSTANTS {
   val EQSIGN      : String =  "="
   val USEB        : String =  "\\USE["
 
-  val SPECSYMBOL  : Array[Char] = Array('*','+','=','\\','!','#','[',']','(',')')
-  val KEYWORD     : Array[String] = Array(DOCB,DOCE,TITLEB,BRACKETE,HEADING,PARAB,PARAE,BOLD,LISTITEM,NEWLINE,LINKB,ADDRESSB,ADDRESSE,IMAGEB,DEFB,EQSIGN,USEB)
-  val ENDLINE     : Array[Char] = Array('\n','\r','\t',' ')
+  val SPECIALSYMBOLS: Array[Char] = Array('*', '+', '=', '\\', '!', '#', '[', ']', '(', ')')
+  val KEYWORDS: Array[String] = Array(DOCB, DOCE, TITLEB, BRACKETE, HEADING, PARAB, PARAE, BOLD, LISTITEM, NEWLINE, LINKB, ADDRESSB, ADDRESSE, IMAGEB, DEFB, EQSIGN, USEB)
+  val ENDLINE: Array[Char] = Array('\t', '\n', '\b','\f','\r')
+  val WHITESPACE : Array[Char] = Array(' ', '\t', '\n', '\b','\f','\r')
 }
