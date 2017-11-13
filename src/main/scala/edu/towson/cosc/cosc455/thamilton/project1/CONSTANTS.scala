@@ -22,4 +22,6 @@ object CONSTANTS {
   val KEYWORDS: Array[String] = Array(DOCB, DOCE, TITLEB, BRACKETE, HEADING, PARAB, PARAE, BOLD, LISTITEM, NEWLINE, LINKB, ADDRESSB, ADDRESSE, IMAGEB, DEFB, EQSIGN, USEB)
   val ENDLINE: Array[Char] = Array('\t', '\n', '\b','\f','\r')
   val WHITESPACE : Array[Char] = Array(' ', '\t', '\n', '\b','\f','\r')
+  val PUNCTUATION: Array[Char] = Array(',' , '.', '\"', ':', '?', '_', '/')
+
 }

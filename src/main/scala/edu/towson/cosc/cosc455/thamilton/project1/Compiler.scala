@@ -7,6 +7,7 @@ object Compiler {
   var index: Int = -1
   var currentToken: String = ""
   val lexical = new MyLexicalAnalyzer
+  val syntax = new MySyntaxAnalyzer
 
 
   def main(args: Array[String]): Unit = {
@@ -16,7 +17,7 @@ object Compiler {
 
     //compilation start
     lexical.getNextToken()
-    //syntax here
+    syntax.gittex()
     //semantics here
   }
 

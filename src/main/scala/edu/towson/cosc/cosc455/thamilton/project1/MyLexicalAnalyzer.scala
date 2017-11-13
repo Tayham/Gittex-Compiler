@@ -22,7 +22,7 @@ class MyLexicalAnalyzer extends LexicalAnalyzer {
     }
     else {
       reachedEnd = true
-      ' '
+      '\0'
     }
   }
 
@@ -41,11 +41,10 @@ class MyLexicalAnalyzer extends LexicalAnalyzer {
         currentToken = token
       }
       else {
-        println("[LEXICAL ERROR] '" + token + "' is an invalid token")
-        System.exit(1)
+        error(token, "token")
       }
     }
-    else if (next.isLetterOrDigit || next.equals(':') || next.equals('.') || next.equals(',')) { // If it is text
+    else if (next.isLetterOrDigit || PUNCTUATION.contains(next)) { // If it is text
       addChar()
       token = token + readText()
       if (next.equals(BRACKETE(0)) || next.equals(ADDRESSE(0)) || next.equals(EQSIGN(0)) || next.equals(NEWLINE(0))) {
@@ -57,8 +56,7 @@ class MyLexicalAnalyzer extends LexicalAnalyzer {
       getNextToken()
     }
     else {
-      println("[LEXICAL ERROR] '" + next + "' is an invalid character")
-      System.exit(1)
+      error(next.toString, "character")
     }
   }
 
@@ -83,8 +81,7 @@ class MyLexicalAnalyzer extends LexicalAnalyzer {
       addChar()
     }
     else {
-      println("[LEXICAL ERROR] '" + next + "' is an invalid character after '!'")
-      System.exit(1)
+      error(next.toString, "character after \"!\"")
     }
   }
 
@@ -95,8 +92,6 @@ class MyLexicalAnalyzer extends LexicalAnalyzer {
 
   def bold() = {
     addChar()
-    getChar()
-    pos = pos - 1 // fix for when characters after end bold are eaten
   }
 
   def listItem() = {
@@ -107,17 +102,19 @@ class MyLexicalAnalyzer extends LexicalAnalyzer {
   def slash() = {
     addChar()
     token = token + readText()
+    if (next.equals(NEWLINE(1))){
+      addChar()
+    }
     if (next.equals(LINKB(0))) {
       addChar()
     }
     if (token.equalsIgnoreCase(DOCE)) {
       findNextText()
       // if there is text after the \END tag
-      if (pos equals fileContent.length != 0) {
+      if (pos != fileContent.length) {
         pos = pos - 1
         getNextToken()
-        println("[SYNTAX ERROR] '" + currentToken + " is placed after the document end'")
-        System.exit(1)
+        error(currentToken,"after the document end") //Should be syntax error
       }
     }
   }
@@ -147,5 +144,10 @@ class MyLexicalAnalyzer extends LexicalAnalyzer {
     while ((WHITESPACE contains next) && !reachedEnd) {
       getChar()
     }
+  }
+
+  def error(invalid : String, kind : String): Unit = {
+    println("[LEXICAL ERROR] \"" + next + "\" is an invalid " + kind)
+    System.exit(1)
   }
 }
