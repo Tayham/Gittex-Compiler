@@ -12,8 +12,8 @@ class MySyntaxAnalyzer extends SyntaxAnalyzer {
   override def gittex(): Unit = {
     if (currentToken.equalsIgnoreCase(DOCB)) {
       pushGet()
-      title()
       variableDefine()
+      title()
       body()
       if (currentToken.equalsIgnoreCase(DOCE)) parser.push(currentToken)
       else error(DOCE)
