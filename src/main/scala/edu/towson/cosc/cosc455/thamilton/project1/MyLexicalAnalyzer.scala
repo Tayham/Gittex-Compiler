@@ -147,7 +147,7 @@ class MyLexicalAnalyzer extends LexicalAnalyzer {
   }
 
   def error(invalid : String, kind : String): Unit = {
-    println("[LEXICAL ERROR] \"" + next + "\" is an invalid " + kind)
+    println("[LEXICAL ERROR] \"" + invalid + "\" is an invalid " + kind)
     System.exit(1)
   }
 }

@@ -18,7 +18,8 @@ object Compiler {
     //compilation start
     lexical.getNextToken()
     syntax.gittex()
-    //semantics here
+    var semantic = new MySemanticAnalyzer(filename.dropRight(4))
+    semantic.run()
   }
 
   def readFile(file: String) = {

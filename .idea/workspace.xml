@@ -6,17 +6,12 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c153fecb-009c-4b39-b395-93fdc506d12c" name="Default" comment="Finished SyntaxAnalyzer &amp; Improved LexicalAnalyzer: Make nice error methods for each. PROBLEM with LexAnalyzer with test case 4">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/Taylor.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/SBT__org_scala_lang_scala_library_2_11_8_jar.xml" />
+    <list default="true" id="c153fecb-009c-4b39-b395-93fdc506d12c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/edu/towson/cosc/cosc455/thamilton/project1/CONSTANTS.scala" afterPath="$PROJECT_DIR$/src/main/scala/edu/towson/cosc/cosc455/thamilton/project1/CONSTANTS.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/edu/towson/cosc/cosc455/thamilton/project1/Compiler.scala" afterPath="$PROJECT_DIR$/src/main/scala/edu/towson/cosc/cosc455/thamilton/project1/Compiler.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/edu/towson/cosc/cosc455/thamilton/project1/MyLexicalAnalyzer.scala" afterPath="$PROJECT_DIR$/src/main/scala/edu/towson/cosc/cosc455/thamilton/project1/MyLexicalAnalyzer.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/edu/towson/cosc/cosc455/thamilton/project1/MySemanticAnalyzer.scala" afterPath="$PROJECT_DIR$/src/main/scala/edu/towson/cosc/cosc455/thamilton/project1/MySemanticAnalyzer.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/edu/towson/cosc/cosc455/thamilton/project1/MySyntaxAnalyzer.scala" afterPath="$PROJECT_DIR$/src/main/scala/edu/towson/cosc/cosc455/thamilton/project1/MySyntaxAnalyzer.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/edu/towson/cosc/cosc455/thamilton/project1/SyntaxAnalyzer.scala" afterPath="$PROJECT_DIR$/src/main/scala/edu/towson/cosc/cosc455/thamilton/project1/SyntaxAnalyzer.scala" />
     </list>
     <ignored path="$PROJECT_DIR$/project/project/target/" />
     <ignored path="$PROJECT_DIR$/project/target/" />
@@ -46,8 +41,8 @@
       <file leaf-file-name="Compiler.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cosc/cosc455/thamilton/project1/Compiler.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="31" column="47" lean-forward="false" selection-start-line="31" selection-start-column="47" selection-end-line="31" selection-end-column="47" />
+            <state relative-caret-position="266">
+              <caret line="20" column="6" lean-forward="true" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -63,11 +58,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Test2.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/Test2.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="CONSTANTS.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cosc/cosc455/thamilton/project1/CONSTANTS.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+            <state relative-caret-position="374">
+              <caret line="22" column="11" lean-forward="false" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -86,8 +91,8 @@
       <file leaf-file-name="MyLexicalAnalyzer.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cosc/cosc455/thamilton/project1/MyLexicalAnalyzer.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="44" column="7" lean-forward="true" selection-start-line="44" selection-start-column="7" selection-end-line="44" selection-end-column="7" />
+            <state relative-caret-position="714">
+              <caret line="42" column="12" lean-forward="false" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="12" />
               <folding>
                 <element signature="e#52#113#0" expanded="true" />
               </folding>
@@ -95,11 +100,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MySyntaxAnalyzer.scala" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MySyntaxAnalyzer.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cosc/cosc455/thamilton/project1/MySyntaxAnalyzer.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-527">
-              <caret line="11" column="20" lean-forward="true" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
+            <state relative-caret-position="170">
+              <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding>
                 <element signature="e#52#113#0" expanded="true" />
               </folding>
@@ -107,13 +112,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MySemanticAnalyzer.scala" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MySemanticAnalyzer.scala" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cosc/cosc455/thamilton/project1/MySemanticAnalyzer.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="27" lean-forward="true" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
+            <state relative-caret-position="-2879">
+              <caret line="10" column="6" lean-forward="false" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
               <folding>
-                <element signature="e#51#74#0" expanded="true" />
+                <element signature="e#52#113#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -160,19 +165,19 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/build.sbt" />
-        <option value="$PROJECT_DIR$/src/main/scala/edu/towson/cosc/cosc455/thamilton/project1/MySemanticAnalyzer.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/edu/towson/cosc/cosc455/thamilton/project1/LexicalAnalyzer.scala" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/src/main/scala/edu/towson/cosc/cosc455/thamilton/project1/CONSTANTS.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/edu/towson/cosc/cosc455/thamilton/project1/SyntaxAnalyzer.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/edu/towson/cosc/cosc455/thamilton/project1/Compiler.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/edu/towson/cosc/cosc455/thamilton/project1/MyLexicalAnalyzer.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/edu/towson/cosc/cosc455/thamilton/project1/MySyntaxAnalyzer.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/edu/towson/cosc/cosc455/thamilton/project1/MyLexicalAnalyzer.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/edu/towson/cosc/cosc455/thamilton/project1/MySemanticAnalyzer.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/edu/towson/cosc/cosc455/thamilton/project1/Compiler.scala" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
+    <option name="x" value="953" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
@@ -244,7 +249,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$/test/Test4.gtx" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.tabs" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -261,7 +266,45 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Compiler4">
+  <component name="RunManager" selected="Application.Compiler1">
+    <configuration name="Compiler1" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="edu.towson.cosc.cosc455.jdehlinger.project1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="edu.towson.cosc.cosc455.thamilton.project1.Compiler" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="C:\GitHub\Gittex-Compiler\test\Test1.txt" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="gittex-compiler" />
+      <envs />
+    </configuration>
+    <configuration name="Compiler10" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="edu.towson.cosc.cosc455.jdehlinger.project1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="edu.towson.cosc.cosc455.thamilton.project1.Compiler" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="C:\GitHub\Gittex-Compiler\test\Test10.gtx" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="gittex-compiler" />
+      <envs />
+    </configuration>
     <configuration name="Compiler2" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -338,6 +381,44 @@
       <module name="gittex-compiler" />
       <envs />
     </configuration>
+    <configuration name="Compiler6" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="edu.towson.cosc.cosc455.jdehlinger.project1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="edu.towson.cosc.cosc455.thamilton.project1.Compiler" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="C:\GitHub\Gittex-Compiler\test\Test6.gtx" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="gittex-compiler" />
+      <envs />
+    </configuration>
+    <configuration name="Compiler7" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="edu.towson.cosc.cosc455.jdehlinger.project1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="edu.towson.cosc.cosc455.thamilton.project1.Compiler" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="C:\GitHub\Gittex-Compiler\test\Test7.gtx" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="gittex-compiler" />
+      <envs />
+    </configuration>
     <configuration name="Compiler8" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -348,6 +429,25 @@
       <option name="MAIN_CLASS_NAME" value="edu.towson.cosc.cosc455.thamilton.project1.Compiler" />
       <option name="VM_PARAMETERS" value="" />
       <option name="PROGRAM_PARAMETERS" value="C:\GitHub\Gittex-Compiler\test\Test8.gtx" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="gittex-compiler" />
+      <envs />
+    </configuration>
+    <configuration name="Compiler9" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="edu.towson.cosc.cosc455.jdehlinger.project1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="edu.towson.cosc.cosc455.thamilton.project1.Compiler" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="C:\GitHub\Gittex-Compiler\test\Test9.gtx" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -444,13 +544,18 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <envs />
     </configuration>
-    <list size="6">
-      <item index="0" class="java.lang.String" itemvalue="Application.Compiler2" />
-      <item index="1" class="java.lang.String" itemvalue="Application.Compiler3" />
-      <item index="2" class="java.lang.String" itemvalue="Application.Compiler4" />
-      <item index="3" class="java.lang.String" itemvalue="Application.Compiler5" />
-      <item index="4" class="java.lang.String" itemvalue="Application.Compiler8" />
-      <item index="5" class="java.lang.String" itemvalue="JAR Application.compiler.jar" />
+    <list size="11">
+      <item index="0" class="java.lang.String" itemvalue="Application.Compiler1" />
+      <item index="1" class="java.lang.String" itemvalue="Application.Compiler2" />
+      <item index="2" class="java.lang.String" itemvalue="Application.Compiler3" />
+      <item index="3" class="java.lang.String" itemvalue="Application.Compiler4" />
+      <item index="4" class="java.lang.String" itemvalue="Application.Compiler5" />
+      <item index="5" class="java.lang.String" itemvalue="Application.Compiler6" />
+      <item index="6" class="java.lang.String" itemvalue="Application.Compiler7" />
+      <item index="7" class="java.lang.String" itemvalue="Application.Compiler8" />
+      <item index="8" class="java.lang.String" itemvalue="Application.Compiler9" />
+      <item index="9" class="java.lang.String" itemvalue="Application.Compiler10" />
+      <item index="10" class="java.lang.String" itemvalue="JAR Application.compiler.jar" />
     </list>
     <recent_temporary>
       <list size="1">
@@ -520,28 +625,36 @@
       <option name="project" value="LOCAL" />
       <updated>1510201597566</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Finished SyntaxAnalyzer &amp; Improved LexicalAnalyzer: Make nice error methods for each. PROBLEM with LexAnalyzer with test case 4">
+      <created>1510552163523</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1510552163523</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="SBT" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5021322" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27065217" sideWeight="0.4978678" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27065217" sideWeight="0.4978678" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21162046" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4339019" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="sbt-shell-toolwindow" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -632,7 +745,7 @@
         <state relative-caret-position="34">
           <caret line="3" column="27" lean-forward="false" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
           <folding>
-            <element signature="e#51#74#0" expanded="true" />
+            <element signature="e#52#113#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -805,32 +918,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cosc/cosc455/thamilton/project1/LexicalAnalyzer.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="27" lean-forward="false" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cosc/cosc455/thamilton/project1/MySemanticAnalyzer.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="27" lean-forward="true" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
-          <folding>
-            <element signature="e#51#74#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cosc/cosc455/thamilton/project1/CONSTANTS.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cosc/cosc455/thamilton/project1/SyntaxAnalyzer.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -839,18 +926,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cosc/cosc455/thamilton/project1/Compiler.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cosc/cosc455/thamilton/project1/CONSTANTS.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="47" lean-forward="false" selection-start-line="31" selection-start-column="47" selection-end-line="31" selection-end-column="47" />
+        <state relative-caret-position="374">
+          <caret line="22" column="11" lean-forward="false" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cosc/cosc455/thamilton/project1/MyLexicalAnalyzer.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="44" column="7" lean-forward="true" selection-start-line="44" selection-start-column="7" selection-end-line="44" selection-end-column="7" />
+        <state relative-caret-position="714">
+          <caret line="42" column="12" lean-forward="false" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="12" />
           <folding>
             <element signature="e#52#113#0" expanded="true" />
           </folding>
@@ -859,8 +946,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cosc/cosc455/thamilton/project1/MySyntaxAnalyzer.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-527">
-          <caret line="11" column="20" lean-forward="true" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
+        <state relative-caret-position="170">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding>
+            <element signature="e#52#113#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cosc/cosc455/thamilton/project1/Compiler.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="20" column="6" lean-forward="true" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cosc/cosc455/thamilton/project1/LexicalAnalyzer.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="27" lean-forward="false" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/Test2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/edu/towson/cosc/cosc455/thamilton/project1/MySemanticAnalyzer.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2879">
+          <caret line="10" column="6" lean-forward="false" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
           <folding>
             <element signature="e#52#113#0" expanded="true" />
           </folding>
