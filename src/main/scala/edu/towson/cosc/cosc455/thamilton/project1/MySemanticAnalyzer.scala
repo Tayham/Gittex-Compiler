@@ -178,7 +178,7 @@ class MySemanticAnalyzer(fName: String) {
   }
 
   def useb() = {
-    var temp: String = tokenStack.pop()
+    temp = tokenStack.pop()
     html.append(variables(variables.indexWhere { x => x.name.equalsIgnoreCase(temp) && (x.scope == compScope) }).value + " ")
     tokenStack.pop() // eats ]
   }
