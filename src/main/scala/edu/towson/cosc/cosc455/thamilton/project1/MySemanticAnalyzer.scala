@@ -10,13 +10,13 @@ import java.io.{File, IOException, PrintWriter}
 
 class MySemanticAnalyzer(fName: String) {
 
-  var tokenStack = new mutable.Stack[String]
-  var varCheck = new mutable.Stack[String]
-  var variables = new mutable.Queue[variable]
+  val tokenStack = new mutable.Stack[String]
+  val varCheck = new mutable.Stack[String]
+  val variables = new mutable.Queue[variable]
   var compScope: Int = 0 // the "depth of the scope" i.e. how many blocks in the variable is scoped
   var token: String = ""
   var temp: String = ""
-  var html = new PrintWriter(new File(fName + ".html"))
+  val html = new PrintWriter(new File(fName + ".html"))
 
 
   def semCheck(): Unit = {
@@ -52,8 +52,8 @@ class MySemanticAnalyzer(fName: String) {
     }
   }
 
-  def interpreter() = { // interprets each token in the stack to HTML
-    while (!tokenStack.isEmpty) {
+  def interpreter(): Unit = { // interprets each token in the stack to HTML
+    while (tokenStack.nonEmpty) {
       token = tokenStack.pop()
       token match {
         case DOCB => html.append("<html>\n")
@@ -86,7 +86,7 @@ class MySemanticAnalyzer(fName: String) {
     html.append(" </title>\n</head>\n")
   }
 
-  def heading() = {
+  def heading()= {
     html.append("<h1> ")
     token = tokenStack.pop()
     while (!KEYWORDS.contains(token)) {
@@ -97,12 +97,12 @@ class MySemanticAnalyzer(fName: String) {
     html.append(" </h1>\n")
   }
 
-  def parab() = {
+  def parab(): Unit = {
     html.append("<p> ")
     compScope = compScope + 1
   }
 
-  def parae() = {
+  def parae(): Unit = {
     html.append(" </p>\n")
     compScope = compScope - 1
   }
@@ -122,7 +122,7 @@ class MySemanticAnalyzer(fName: String) {
     html.append("<a href=\"" + link + "\">" + temp + "</a> ")
   }
 
-  def listitem() = {
+  def listitem(): Any = {
     html.append("\n<li> ")
     token = tokenStack.pop()
     if (token.contains("\n")) {
@@ -143,7 +143,7 @@ class MySemanticAnalyzer(fName: String) {
     }
   }
 
-  def imageb() = {
+  def imageb(): PrintWriter = {
     temp = ""
     var link: String = ""
     token = tokenStack.pop()
@@ -157,7 +157,7 @@ class MySemanticAnalyzer(fName: String) {
     html.append("<img src=\"" + link + "\" alt=" + temp + "\">")
   }
 
-  def bold() = {
+  def bold(): PrintWriter = {
     temp = ""
     token = tokenStack.pop()
     while (!token.equalsIgnoreCase(BOLD)) {
@@ -167,8 +167,8 @@ class MySemanticAnalyzer(fName: String) {
     html.append("<b> " + temp + " </b>")
   }
 
-  def defb() = {
-    var variable = new variable()
+  def defb(): String = {
+    val variable = new variable()
     variable.scope = compScope
     variable.name = tokenStack.pop()
     tokenStack.pop() //eats =
@@ -177,14 +177,14 @@ class MySemanticAnalyzer(fName: String) {
     tokenStack.pop() //eats ]
   }
 
-  def useb() = {
+  def useb(): String = {
     temp = tokenStack.pop()
     html.append(variables(variables.indexWhere { x => x.name.equalsIgnoreCase(temp) && (x.scope == compScope) }).value + " ")
     tokenStack.pop() // eats ]
   }
 
   /* * Hack Scala/Java function to take a String filename and open in default web browser. */
-  def openHTMLFileInBrowser(htmlFileStr: String) = {
+  def openHTMLFileInBrowser(htmlFileStr: String): Unit = {
     val file: File = new File(htmlFileStr.trim)
     println(file.getAbsolutePath)
 
@@ -198,7 +198,7 @@ class MySemanticAnalyzer(fName: String) {
     }
   }
 
-  def run() = {
+  def run(): Unit = {
     semCheck()
     interpreter()
   }
@@ -208,4 +208,5 @@ class MySemanticAnalyzer(fName: String) {
     var value = ""
     var scope = 0
   }
+
 }

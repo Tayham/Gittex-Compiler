@@ -1,4 +1,5 @@
 package edu.towson.cosc.cosc455.thamilton.project1
+
 object Compiler {
 
   var filename: String = ""
@@ -18,17 +19,17 @@ object Compiler {
     //compilation start
     lexical.getNextToken()
     syntax.gittex()
-    var semantic = new MySemanticAnalyzer(filename.dropRight(4))
+    val semantic = new MySemanticAnalyzer(filename.dropRight(4))
     semantic.run()
   }
 
-  def readFile(file: String) = {
+  def readFile(file: String): Unit = {
     val source = scala.io.Source.fromFile(file)
     fileContent = try source.mkString finally source.close()
     println(fileContent)
   }
 
-  def checkFile(args: Array[String]) = {
+  def checkFile(args: Array[String]): Unit = {
     if (args.length != 1) {
       println("USAGE ERROR: wrong number of args fool!")
       System.exit(1)

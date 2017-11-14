@@ -7,7 +7,7 @@ import scala.collection.mutable
 
 class MySyntaxAnalyzer extends SyntaxAnalyzer {
 
-  var parser = new mutable.Stack[String]
+  val parser = new mutable.Stack[String]
 
   override def gittex(): Unit = {
     if (currentToken.equalsIgnoreCase(DOCB)) {
@@ -15,7 +15,8 @@ class MySyntaxAnalyzer extends SyntaxAnalyzer {
       variableDefine()
       title()
       body()
-      if (currentToken.equalsIgnoreCase(DOCE)) parser.push(currentToken)
+      if (currentToken.equalsIgnoreCase(DOCE))
+        parser.push(currentToken)
       else error(DOCE)
     }
     else error(DOCB)

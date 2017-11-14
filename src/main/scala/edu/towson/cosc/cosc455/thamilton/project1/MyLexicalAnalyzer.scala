@@ -31,9 +31,9 @@ class MyLexicalAnalyzer extends LexicalAnalyzer {
     getChar()
     findNextText()
 
-    if (reachedEnd == true) {}
+    if (reachedEnd) {}
     else if (SPECIALSYMBOLS.contains(next)) {
-      token = isValid().map(_.toUpper)
+      token = isValid.map(_.toUpper)
       if (token.endsWith("\n")) {
         token = token.substring(0, token.length - 1) //trims off new line characters
       }
@@ -61,20 +61,20 @@ class MyLexicalAnalyzer extends LexicalAnalyzer {
   }
 
   def lookup(token: String): Boolean = { //Returns true if the token is legal
-    return KEYWORDS contains token.toUpperCase
+    KEYWORDS contains token.toUpperCase
   }
 
-  def isValid(): String = { //Determines what type the token is
+  def isValid: String = { //Determines what type the token is
     if (next.equals(BOLD(0))) bold() // *
-    else if (next equals (LISTITEM(0))) listItem() // +
-    else if (next equals (NEWLINE(0))) slash() // \
-    else if (next equals (HEADING(0))) heading() // #
-    else if (next equals (IMAGEB(0))) image() // ! then [
+    else if (next equals LISTITEM(0)) listItem() // +
+    else if (next equals NEWLINE(0)) slash() // \
+    else if (next equals HEADING(0)) heading() // #
+    else if (next equals IMAGEB(0)) image() // ! then [
     else if ((next equals BRACKETE(0)) || (next equals LINKB(0)) || (next equals ADDRESSE(0)) || (next equals ADDRESSB(0)) || (next equals EQSIGN(0))) addChar() // other symbols
     token
   }
 
-  def image() = {
+  def image(): Unit = {
     addChar()
     getChar()
     if (next.equals(IMAGEB(1))) {
@@ -85,24 +85,24 @@ class MyLexicalAnalyzer extends LexicalAnalyzer {
     }
   }
 
-  def heading() = {
+  def heading(): Unit = {
     addChar()
     token = token + readText()
   }
 
-  def bold() = {
+  def bold(): Unit = {
     addChar()
   }
 
-  def listItem() = {
+  def listItem(): Unit = {
     addChar()
     token = token + readText()
   }
 
-  def slash() = {
+  def slash(): Unit = {
     addChar()
     token = token + readText()
-    if (next.equals(NEWLINE(1))){
+    if (next.equals(NEWLINE(1))) {
       addChar()
     }
     if (next.equals(LINKB(0))) {
@@ -114,7 +114,8 @@ class MyLexicalAnalyzer extends LexicalAnalyzer {
       if (pos != fileContent.length) {
         pos = pos - 1
         getNextToken()
-        error(currentToken,"after the document end") //Should be syntax error
+        println("[SYNTAX ERROR]: " + currentToken + " was found after the document end")
+        System.exit(1)
       }
     }
   }
@@ -136,8 +137,7 @@ class MyLexicalAnalyzer extends LexicalAnalyzer {
         text = text + next
       }
     }
-
-    return text
+    text
   }
 
   def findNextText(): Unit = { //Calls get char until a non space character is found
@@ -146,7 +146,7 @@ class MyLexicalAnalyzer extends LexicalAnalyzer {
     }
   }
 
-  def error(invalid : String, kind : String): Unit = {
+  def error(invalid: String, kind: String): Unit = {
     println("[LEXICAL ERROR] \"" + invalid + "\" is an invalid " + kind)
     System.exit(1)
   }
