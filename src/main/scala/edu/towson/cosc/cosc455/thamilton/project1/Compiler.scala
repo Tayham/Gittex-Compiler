@@ -1,11 +1,8 @@
 package edu.towson.cosc.cosc455.thamilton.project1
 
 object Compiler {
-
-  var filename: String = ""
-  var fileContent: String = ""
-
-  var index: Int = -1
+  var filename: String = "" //name of the file
+  var fileContent: String = "" //content of the file
   var currentToken: String = ""
   val lexical = new MyLexicalAnalyzer
   val syntax = new MySyntaxAnalyzer
@@ -13,13 +10,14 @@ object Compiler {
 
   def main(args: Array[String]): Unit = {
     checkFile(args)
+//    filename = "test/" + args(0) //so it can be used later in semantic and only the file name needs to be passed
     filename = args(0)
-    readFile(args(0))
+    readFile(filename)
 
     //compilation start
     lexical.getNextToken()
     syntax.gittex()
-    val semantic = new MySemanticAnalyzer(filename.dropRight(4))
+    val semantic = new MySemanticAnalyzer(filename.dropRight(4)) // removed ".gtx" from file name
     semantic.run()
   }
 

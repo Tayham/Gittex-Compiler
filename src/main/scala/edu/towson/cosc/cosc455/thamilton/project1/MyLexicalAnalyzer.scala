@@ -5,35 +5,38 @@ import edu.towson.cosc.cosc455.thamilton.project1.Compiler._
 
 class MyLexicalAnalyzer extends LexicalAnalyzer {
 
-  var pos: Int = -1
+  var pos: Int = -1 //position the analyzer is at in the file content
   var next: Char = ' '
   var token: String = ""
   var reachedEnd: Boolean = false
 
+  // adds char to the current token
   override def addChar(): Unit = {
     token = token + next
   }
 
+  // gets next char while file has not reached the end
   override def getChar(): Char = {
-    pos = pos + 1
+    pos = pos + 1 //inc pos
     if (pos < fileContent.length) {
       next = fileContent.charAt(pos)
-      next
+      next //returns next
     }
     else {
       reachedEnd = true
-      '\0'
+      '\0' //placeholder
     }
   }
 
+  // gets the next token located in the file
   override def getNextToken(): Unit = {
     token = ""
     getChar()
     findNextText()
 
-    if (reachedEnd) {}
+    if (reachedEnd) {} //do nothing
     else if (SPECIALSYMBOLS.contains(next)) {
-      token = isValid.map(_.toUpper)
+      token = isValid.map(_.toUpper) // standardize to upper case
       if (token.endsWith("\n")) {
         token = token.substring(0, token.length - 1) //trims off new line characters
       }
@@ -47,12 +50,12 @@ class MyLexicalAnalyzer extends LexicalAnalyzer {
     else if (next.isLetterOrDigit || PUNCTUATION.contains(next)) { // If it is text
       addChar()
       token = token + readText()
-      if (next.equals(BRACKETE(0)) || next.equals(ADDRESSE(0)) || next.equals(EQSIGN(0)) || next.equals(NEWLINE(0))) {
+      if (next.equals(BRACKETE(0)) || next.equals(ADDRESSE(0)) || next.equals(EQSIGN(0)) || next.equals(NEWLINE(0))) { //moves pos back one to stop skipping
         pos = pos - 1
       }
       currentToken = token
     }
-    else if (ENDLINE.contains(next)) {
+    else if (ENDLINE.contains(next)) { //if next is an end line
       getNextToken()
     }
     else {
@@ -114,7 +117,7 @@ class MyLexicalAnalyzer extends LexicalAnalyzer {
       if (pos != fileContent.length) {
         pos = pos - 1
         getNextToken()
-        println("[SYNTAX ERROR]: " + currentToken + " was found after the document end")
+        println("[SYNTAX ERROR]: " + currentToken + " was found after the document end") // doesn't work without syntax analyzer
         System.exit(1)
       }
     }
@@ -123,15 +126,14 @@ class MyLexicalAnalyzer extends LexicalAnalyzer {
   def readText(): String = { //Gets characters until next token or end
     var text: String = ""
     getChar()
-
-    while (!next.isSpaceChar && !(ENDLINE contains next) && !(SPECIALSYMBOLS contains next) && !reachedEnd) {
+    while (!(WHITESPACE contains next) && !(SPECIALSYMBOLS contains next) && !reachedEnd) { // while it is text
       text = text + next
       getChar()
     }
-    if (next.equals('\n')) {
+    if (next.equals('\n')) { // stops errors on new line
       text = text + next
     }
-    if (next.equals('\r')) {
+    if (next.equals('\r')) { // stops errors on new line
       getChar()
       if (next.equals('\n')) {
         text = text + next
@@ -140,12 +142,14 @@ class MyLexicalAnalyzer extends LexicalAnalyzer {
     text
   }
 
-  def findNextText(): Unit = { //Calls get char until a non space character is found
+  //Calls get char until a non space character is found
+  def findNextText(): Unit = {
     while ((WHITESPACE contains next) && !reachedEnd) {
       getChar()
     }
   }
 
+  // simple method that prints error and exits
   def error(invalid: String, kind: String): Unit = {
     println("[LEXICAL ERROR] \"" + invalid + "\" is an invalid " + kind)
     System.exit(1)

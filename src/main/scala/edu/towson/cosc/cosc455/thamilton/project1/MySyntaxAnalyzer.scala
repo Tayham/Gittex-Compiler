@@ -220,6 +220,7 @@ class MySyntaxAnalyzer extends SyntaxAnalyzer {
     currentToken.length == currentToken.filter(x => x.isLetterOrDigit || (ENDLINE contains x) || (PUNCTUATION contains x)).length
   }
 
+  // simple method that prints error and exits
   def error(expected: String): Unit = {
     println("[SYNTAX ERROR] Found \"" + currentToken + "\" but was expecting \"" + expected + "\"")
     System.exit(1)

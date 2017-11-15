@@ -8,17 +8,17 @@ import java.awt.Desktop
 import java.io.{File, IOException, PrintWriter}
 
 
-class MySemanticAnalyzer(fName: String) {
+class MySemanticAnalyzer(fName: String) { //takes file name to prevent null error
 
   val tokenStack = new mutable.Stack[String]
-  val varCheck = new mutable.Stack[String]
-  val variables = new mutable.Queue[variable]
+  val validVariables = new mutable.Stack[String] //stack for checking whether variables have been defined
+  val variables = new mutable.Queue[variable] // queue of variables
   var compScope: Int = 0 // the "depth of the scope" i.e. how many blocks in the variable is scoped
   var token: String = ""
   var temp: String = ""
-  val html = new PrintWriter(new File(fName + ".html"))
+  val html = new PrintWriter(new File(fName + ".html")) // creates new html file with same name
 
-
+  // checks semantics for any errors
   def semCheck(): Unit = {
     while (!token.equalsIgnoreCase(DOCB) && syntax.parser.nonEmpty) {
       token = syntax.parser.pop()
@@ -35,16 +35,18 @@ class MySemanticAnalyzer(fName: String) {
     }
   }
 
+  //adds token to valid variables stack
   def varDefCheck(): Unit = {
-    varCheck.push(tokenStack.top)
+    validVariables.push(tokenStack.top)
     tokenStack.push(token)
   }
 
+  // checks to see if variable usage is valid
   def varUseCheck(): Unit = {
     temp = tokenStack.top
     tokenStack.push(token)
-    while (!varCheck.contains(temp)) {
-      if (syntax.parser.isEmpty && !varCheck.contains(temp)) {
+    while (!validVariables.contains(temp)) { // variable is not in known valid variables stack
+      if (syntax.parser.isEmpty && !validVariables.contains(temp)) {
         println("[STATIC SEMANTIC ERROR]: \"" + temp + "\" was never defined")
         System.exit(1)
       }
@@ -99,12 +101,12 @@ class MySemanticAnalyzer(fName: String) {
 
   def parab(): Unit = {
     html.append("<p> ")
-    compScope = compScope + 1
+    compScope = compScope + 1 // increases scope
   }
 
   def parae(): Unit = {
     html.append(" </p>\n")
-    compScope = compScope - 1
+    compScope = compScope - 1 // decreases scope
   }
 
   def linkb(): Unit = {
@@ -115,9 +117,9 @@ class MySemanticAnalyzer(fName: String) {
       temp = temp + token + " "
       token = tokenStack.pop()
     }
-    tokenStack.pop()
+    tokenStack.pop() //eats [
     link = link + tokenStack.pop()
-    tokenStack.pop()
+    tokenStack.pop() //eats ]
 
     html.append("<a href=\"" + link + "\">" + temp + "</a> ")
   }
@@ -151,9 +153,9 @@ class MySemanticAnalyzer(fName: String) {
       temp = temp + token + " "
       token = tokenStack.pop()
     }
-    tokenStack.pop()
+    tokenStack.pop() //eats ![
     link = link + tokenStack.pop()
-    tokenStack.pop()
+    tokenStack.pop() //eats ]
     html.append("<img src=\"" + link + "\" alt=" + temp + "\">")
   }
 
@@ -169,7 +171,7 @@ class MySemanticAnalyzer(fName: String) {
 
   def defb(): String = {
     val variable = new variable()
-    variable.scope = compScope
+    variable.scope = compScope //sets variable scope to current compiler scope
     variable.name = tokenStack.pop()
     tokenStack.pop() //eats =
     variable.value = tokenStack.pop()
@@ -179,7 +181,7 @@ class MySemanticAnalyzer(fName: String) {
 
   def useb(): String = {
     temp = tokenStack.pop()
-    html.append(variables(variables.indexWhere { x => x.name.equalsIgnoreCase(temp) && (x.scope == compScope) }).value + " ")
+    html.append(variables(variables.indexWhere { x => x.name.equalsIgnoreCase(temp) && (x.scope == compScope) }).value + " ") //finds the variable definition for the variable in the current scope
     tokenStack.pop() // eats ]
   }
 
@@ -198,11 +200,13 @@ class MySemanticAnalyzer(fName: String) {
     }
   }
 
+  //simple method to be called by compiler
   def run(): Unit = {
     semCheck()
     interpreter()
   }
 
+  // contains all of the variable information
   class variable {
     var name = ""
     var value = ""
